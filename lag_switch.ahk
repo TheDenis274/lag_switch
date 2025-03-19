@@ -10,3 +10,12 @@ shell := ComObject("WScript.Shell")
 	shell.Run("ipconfig /renew", 0)
 	WinActivate(active_window)
 }
+
+!]:: {
+	active_window := WinGetID("A")
+	shell.Run("ipconfig /release", 0)
+	WinActivate(active_window)
+	Sleep(3000)
+	shell.Run("ipconfig /renew", 0)
+	WinActivate(active_window)
+}
